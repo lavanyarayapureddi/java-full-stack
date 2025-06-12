@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>form validation</title>
+        <style>
+            .validate{
+                color:firebrick;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 align="center">Registration Form</h1>
+        <form name="myform" onsubmit="return validitation()" >
+            <fieldset>
+                <label>Name : </label>
+                <input type="text" id="myname" placeholder="enter your name"><br>
+                <span id="nameerror" class="validate"></span><br><br>
+
+                <lable>Email :</lable>
+                <input type="text" id="myemail" placeholder="enter your email id"><br>
+                <span id="emailerror" class="validate"></span><br><br>
+
+                <label>password :</label>
+                <input type="text" id="mypassword" placeholde="enter password"><br>
+                <span id="passworderror" class="validate"></span><br><br>
+
+                <label>phone no :</label>
+                <input type="number" id="mynumber" placeholder="enter mobile number"><br>
+
+                <span id="numbererror" class="validate"></span><br><br>
+                <button >submit</button>
+             </fieldset>
+        </form>
+    </body>
+    <script>
+        function validitation()
+        {
+            let isvalid=true;
+            let name =document.getElementById("myname").value.trim();
+            let email =document.getElementById("myemail").value.trim();
+            let password =document.getElementById("mypassword").value.trim();
+            let phone =document.getElementById("mynumber").value.trim();
+
+            //name validation
+            if (name==="")
+        {
+             document.getElementById("nameerror").innerText="Name is required.";
+             isvalid=false;
+        }
+           //email validation
+           const emailpattern=/^[^] + @[^] + \.[a-z] {2,3} $/;      
+         if ( email!= emailpattern)
+         {
+            document.getElementById("emailerror").innerText="enter proper email id.";
+            isvalid=false;
+         }
+         //password validation
+         if(password.length<8)
+         {
+            document.getElementById("passworderror").innerText="length of password must be greater than 7.";
+            isvalid=false;
+         }
+         //mobile number validation
+         if(phone.length!=10)
+         {
+            document.getElementById("numbererror").innerText="phone number must be 10 digits.";
+            isvalid=false;
+         }
+         return isvalid;
+        }
+    </script>
+</html>
