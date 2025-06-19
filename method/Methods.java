@@ -1,57 +1,182 @@
-//without parameter and return type
+//2 static,instance methods and variables
 class Methods
 {
-public void add()
+    static int a=10;
+    static int b=20;
+    int c=30;
+    int d=40;
+    static void s1()
+    {
+        System.out.println("static method 1");
+    }
+    static void s2()
+    {
+         System.out.println("static method 2");
+         System.out.println(a);
+      System.out.println(b);
+    }
+     
+      void instancemethod1()
+      {
+          System.out.println("instance method1");
+      }
+      void instancemethod2()
+      {
+          System.out.println("instance  method2 ");
+      }
+      public static void main(String[] args){
+          Methods a=new Methods();
+          a.s1();
+          a.s2();
+          
+          System.out.println("executed successfully");
+          
+      }
+/* output
+
+     static method 1
+static method 2
+10
+20
+executed successfully
+*/
+      
+      }
+
+
+
+
+//print instance variables in static method
+class Instancevar
 {
-System.out.println(10+20);
-}
-public static void main(String[] args)
-{
-Methods m=new Methods();
-m.add();
-}
+    int a=10;
+    int b=20;
+    static void greet()
+    {
+        Instancevar obj=new Instancevar();
+        System.out.println(obj.a);
+        System.out.println(obj.b);
+        
+    }
+    public static void main(String[] args)
+    {
+        System.out.println("executed succesfully");
+        greet();
+    }
 }
 
-//without arguments and with return type
-class Methods
+//output:
+/*
+executed succesfully
+10
+20*/
+
+
+//print staic variable in instance class
+public class Instancevar
 {
-public int sub()
-{
-System.out.println(30-20);
-return (30-20);
+    static int a=10;
+    static int b=20;
+    void greet()
+    {
+        System.out.println(a);
+        System.out.println(b);
+        
+    }
+    public static void main(String[] args)
+    {
+        System.out.println("hi");
+        Instancevar obj=new Instancevar();
+        obj.greet();
+        
+    }
 }
-public static void main(String[] args)
+/*
+Output
+hi
+10
+20
+*/
+
+
+
+//call instance methods in static methods
+class Static 
 {
-Methods m=new Methods();
-m.sub();
-}
+    void show() 
+    {
+        System.out.println("This is instance method");
+    }
+
+    
+    public static void  main(String[] args) 
+    
+    {
+        System.out.println("successful");
+        Static obj = new Static();
+        obj.show();  
+    }
 }
 
-//with arguments and with return type
-class Methods
+
+//call static methods in instance methods
+class Instancevar 
 {
-public int mul(int a,int b)
-{
-System.out.println(a*b);
-return (a*b);
-}
-public static void main(String[] args)
-{
-Methods m=new Methods();
-m.mul(3,2);
-}
+    static void show() 
+    {
+        System.out.println("This is a static method");
+    }
+
+    
+    public void display() 
+    {
+        System.out.println("Inside instance method");
+        show(); 
+    }
+
+    public static void main(String[] args) 
+    {
+        Instancevar obj = new Instancevar(); 
+        obj.display();  
+    }
 }
 
-//with arguments and without return type
-class Methods
+
+class Static
 {
-public void div(int a,int b)
-{
-System.out.println(a/b);
+
+   
+    static int a = 10;
+    static int b= 20;
+
+    int c = 30;
+    int d= 40;
+
+    public static void main(String[] args) 
+    {
+       
+        Static obj = new Static();
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(obj.c);
+        System.out.println(obj.d);
+    }
 }
-public static void main(String[] args)
-{
-Methods m=new Methods();
-m.div(10,5);
+
+
+ //Call static methods and instance methods in main method
+ class Static{
+    static void Method() {
+        System.out.println("This is a static method.");
+    }
+    void instanceMethod() {
+        System.out.println("This is an instance method.");
+    }
+
+    public static void main(String[] args) {
+        Method();
+        Static obj = new Static();
+        obj.instanceMethod();
+    }
 }
-}
+
