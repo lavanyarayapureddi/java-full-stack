@@ -78,4 +78,68 @@ System.out.println("element is not found");
 }
 
 
+//cpoy an array to anther array
+import java.util.Scanner;
+
+public class AddElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] oldArray = {1, 2, 3, 4};
+        System.out.println("Old Array:");
+        for (int i = 0; i < oldArray.length; i++) {
+            System.out.print(oldArray[i] + " ");
+        }
+        System.out.print("\nEnter number to add: ");
+        int newNumber = sc.nextInt();
+        int[] newArray = new int[oldArray.length + 1];
+        for (int i = 0; i < oldArray.length; i++) {
+            newArray[i] = oldArray[i];
+        }
+        newArray[newArray.length - 1] = newNumber;
+        System.out.println("New Array:");
+        for (int i = 0; i < newArray.length; i++) {
+            System.out.print(newArray[i] + " ");
+        }
+
+        sc.close();
+    }
+}
+
+//finding max and min
+public class MinMaxArray {
+    public static void main(String[] args) {
+        int[] numbers = {10, 5, 25, 8, 15};
+
+        
+        int min = numbers[0];
+        int max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+           
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        System.out.println("Minimum value: " + min);
+        System.out.println("Maximum value: " + max);
+    }
+}
+
+//reverse of an array
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        System.out.println("Original Array:");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("\nReversed Array:");
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
+    }
+}
 
