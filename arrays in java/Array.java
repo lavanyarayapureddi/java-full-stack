@@ -78,7 +78,7 @@ System.out.println("element is not found");
 }
 
 
-//cpoy an array to anther array
+//add element
 import java.util.Scanner;
 
 public class AddElement {
@@ -142,4 +142,79 @@ public class ReverseArray {
         }
     }
 }
+
+// array conatins specific element or  not
+class Arrays
+{
+public static void main(String[] args)
+{
+int a[]={1,2,3,4,5};
+ int target=4;
+int count=0;
+for(int i=0;i<a.length;i++)
+{
+if(a[i]==target)
+{
+count++;
+}
+
+}
+if(count==1)
+{
+System.out.println("element found at position");
+}
+else
+{
+System.out.println("element is not found");
+}
+}
+}
+
+//remove of an element
+class Arrays
+{
+public static void main(String[] args)
+{
+int a[]={1,2,3,4,5};
+int target=3;
+int b[]=new int[(a.length)-1];
+int j= 0;
+for(int i=0;i<a.length;i++)
+{
+if(a[i]!=target)
+{
+b[j]=a[i];
+j++;
+}
+}
+for( int i=0;i<b.length;i++)
+{
+System.out.println(b[i]+" ");
+}
+}
+}*/
+
+//copy of one array into another array
+class Arrays
+{
+public  static void main(String[] args)
+{
+int a[]={1,2,5,6,7};
+int b[]=new int[(a.length)-1];
+for(int i=0; i<b.length; i++)
+{
+b[i]=a[i];
+System.out.print(a[i]+" ");
+System.out.println(" ");
+}
+for(int i=0; i<b.length; i++)
+{
+System.out.print(b[i]+" ");
+}
+}
+}
+
+
+
+
 
